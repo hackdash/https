@@ -2,9 +2,9 @@ hackdash
 ========
 
 TODO:
-auth
-lists
-posts
-subscribe
-?????
-PROFIT
+- auth
+- lists
+- posts
+- subscribe
+- ?????
+- PROFIT
