@@ -1,0 +1,8 @@
+{
+"http": 80,
+"https": {
+	"cert": "cert/ssl.crt",
+	"key": "cert/ssl.key",
+	"port": 443
+	},
+"":""}

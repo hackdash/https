@@ -1,0 +1,22 @@
+{
+	"name" : "hackdash",
+	"version" : "0.1.0",
+	"description" : "web app",
+	"keywords" : [
+		"app"
+	],
+	"homepage" : "http://hackdash.com/",
+	"author" : "Vezquex <admin@vezquex.com>",
+	"bugs" : {
+		"url" : "http://github.com/hackdash/hackdash/issues"
+	, "email" : "admin@hackdash.com"
+	},
+	"license" : "GPL-2.0",
+	"dependencies" : {
+		"ensure-https" : "0.2.0"
+	},
+	"repository": {
+		"type" : "git",
+		"url" : "git://github.com/hackdash/hackdash.git"
+	}
+}
