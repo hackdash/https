@@ -1,7 +1,7 @@
 # hackdash
 web server with HTTPS
 
-Each users corresponds to a subdomain.
+Each user corresponds to a subdomain.
 Unfortunately, due to TLS, resource manipulation has to be done through one subdomain rather than at the actual locations.
 The API is a reserved subdomain, the same one as the TLS certificate.
 Its cookies are not accessible from other subdomains.
