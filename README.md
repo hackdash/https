@@ -19,9 +19,9 @@ Its cookies are not accessible from other subdomains.
 - Production: DNS records: domain, wildcard subdomain
 - Edit `config.json`
 - Terminal:
--- `cd` to this directory
--- `nodejs ./server.js`
--- For ports below 1024, prefix with `sudo `. (You should forward higher ports to avoid.)
+  - `cd` to this directory
+  - `nodejs ./server.js`
+  - For ports below 1024, prefix with `sudo `. (You should forward higher ports to avoid.)
 
 ## To Do
 - forward ports
