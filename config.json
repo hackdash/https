@@ -1,8 +1,13 @@
 {
-"http": 80,
+"domain":{
+	"api":"api.localhost",
+	"root":"localhost"
+	},
+"http": {"port": 8080},
 "https": {
 	"cert": "cert/ssl.crt",
 	"key": "cert/ssl.key",
-	"port": 443
+	"port": 8443
 	},
-"":""}
+"":""
+}
