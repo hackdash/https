@@ -8,14 +8,15 @@ var rd = require('./lib/http/redirect-domain.js');
 var root = 'http://'+config.domain.root+':'+config.http.port;
 var subdomains = config.domain.root.split('.');
 var request_domain = function(req){
-	var host = req.headers.host || return false;
-	return host.split(':')[0];
+	var host = req.headers.host;
+	if(host) return host.split(':')[0];
 }
 
 var respond = {};
 
 respond.http = function(req, res){
-	var domain = request_domain(req) || return respond.error('Host header missing.', req, res);
+	var domain = request_domain(req);
+	if(!domain) return respond.error('Host header missing.', req, res);
 	var req_subdomains = domain.split('.').slice(0, -1 * subdomains.length);
 	var subdomain = req_subdomains[0];
 
