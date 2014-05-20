@@ -8,13 +8,14 @@ var rd = require('./lib/http/redirect-domain.js');
 var root = 'http://'+config.domain.root+':'+config.http.port;
 var subdomains = config.domain.root.split('.');
 var request_domain = function(req){
-	return req.headers.host.split(':')[0];
+	var host = req.headers.host || return false;
+	return host.split(':')[0];
 }
 
 var respond = {};
 
 respond.http = function(req, res){
-	var domain = request_domain(req);
+	var domain = request_domain(req) || return respond.error('Host header missing.', req, res);
 	var req_subdomains = domain.split('.').slice(0, -1 * subdomains.length);
 	var subdomain = req_subdomains[0];
 
@@ -38,6 +39,12 @@ respond.https = function(req, res){
 
 	var response_type = (req.url === '/') ? 'home' : 'notfound';
 	respond[response_type](req, res);
+}
+
+respond.error = function (msg, req, res){
+	res.writeHead(500);
+	res.end('Error. '+msg);
+	console.log('error: ', req.headers.host + req.url);
 }
 
 respond.notfound = function (req, res){
